@@ -10,4 +10,4 @@ Link to CV...
 
 
 <!-- https://stackoverflow.com/questions/30745981/opening-pdf-in-a-browser-with-github-pages -->
-<a href="/al-folio/assets/pdf/example_pdf.pdf" target="test">PDF.</a>
+<a href="/assets/pdf/example_pdf.pdf" target="test">PDF.</a>
