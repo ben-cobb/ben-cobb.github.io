@@ -3,7 +3,7 @@ layout: page
 title: Research
 permalink: /research/
 description: A growing collection of your cool projects.
-nav: true  #----> to add this back to the top, we can set this to true...
+nav: #true  #----> to add this back to the top, we can set this to true...
 # importance: 1
 ---
 

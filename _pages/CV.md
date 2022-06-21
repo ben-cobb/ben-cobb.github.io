@@ -3,6 +3,7 @@ layout: none
 title: CV
 permalink: /CV/
 description: CV
+order: 5
 nav: true  #----> to add this back to the top, we can set this to true...
 ---
 
