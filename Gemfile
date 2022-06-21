@@ -12,3 +12,5 @@ group :jekyll_plugins do
 end
 
 # gem "al-folio"
+
+gem "webrick", "~> 1.7"
