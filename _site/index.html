@@ -102,55 +102,49 @@
             </a>
           </li> -->
 
-          <!-- CV -->
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           <li class="nav-item ">
-            <a class="nav-link" target="_blank" href="/assets/pdf/Ben_Cobb_resume_02_16_21_1_2.pdf">
+              <a class="nav-link" href="/publications/">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+
+          <!-- CV -->
+          <!-- NOTE: this places the CV link right next to the dark mode clicker... -->
+          <li class="nav-item ">
+            <a class="nav-link" target="_blank" href="/assets/pdf/Ben_Cobb_resume_git.pdf">
               CV
               
             </a>
           </li>
-
-          <!-- Other pages -->
-          <!-- 
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="nav-item ">
-              <a class="nav-link" href="/CV/">
-                CV
-                
-              </a>
-          </li>
-          
-          
-          
-          <li class="nav-item ">
-              <a class="nav-link" href="/research/">
-                Research
-                
-              </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-           -->
 
           
             <div class = "toggle-container">
@@ -160,6 +154,7 @@
               </a>
             </div>
           
+
         </ul>
       </div>
     </div>
@@ -208,14 +203,18 @@ algorithms within the Parallel Low-rank Approximations with Non-negativity Const
 large-scale datasets. This work is in close collaboration with Oak Ridge National Lab
 (<a href="https://www.ornl.gov/publication/planc-parallel-low-rank-approximation-nonnegativity-constraints" target="\_blank">ORNL</a>).</p>
 
-<p>Previous to this, I worked on the <a href="https://gitlab.com/tensors/genten" target="\_blank">GenTen</a>
-project in collaboration with Sandia National Laboratories
-(<a href="https://www.sandia.gov/" target="\_blank">SNL</a>) as part of the Department of Energy’s
-(<a href="https://www.energy.gov/" target="\_blank">DOE</a>) larger <a href="https://www.exascaleproject.org/" target="\_blank">Exascale Computing
-project</a>. On this
-project I worked to optimize portable dense tensor kernels based upon the
+<p>Previous to this, I worked under the supervision of <a href="https://faculty.cc.gatech.edu/~umit/" target="\_blank">Ümit V.
+Çatalyürek</a> on the
+<a href="https://gitlab.com/tensors/genten" target="\_blank">GenTen</a> project in collaboration with Sandia
+National Laboratories (<a href="https://www.sandia.gov/" target="\_blank">SNL</a>) as part of the Department of
+Energy’s (<a href="https://www.energy.gov/" target="\_blank">DOE</a>) larger <a href="https://www.exascaleproject.org/" target="\_blank">Exascale Computing
+project</a>. On this project, I had the pleasure of
+collaborating with <a href="https://cfwebprod.sandia.gov/cfdocs/CompResearch/templates/insert/profile.cfm?etphipp" target="\_blank">Eric
+Phipps</a>
+and <a href="https://scholar.google.com/citations?user=_9VQ8rUAAAAJ&amp;hl=en" target="\_blank">Hemanth Kolla</a>
+as we worked to optimize portable dense tensor kernels based upon the
 <a href="https://github.com/kokkos" target="\_blank">Kokkos</a> programming model for use in
-compressing large combustion simulation datasets. As part of this, I developed a novel in-place
+compressing large combustion simulation datasets. As part of this, we developed a novel in-place
 variant of the Sequentially Truncated Singular Value Decomposition
 (<a href="https://people.cs.kuleuven.be/~nick.vannieuwenhoven/papers/01-STHOSVD.pdf" target="\_blank">ST-HOSVD</a>)
 for computing the <a href="https://en.wikipedia.org/wiki/Higher-order_singular_value_decomposition" target="\_blank">Tucker
@@ -234,6 +233,129 @@ undergraduate advisor and mentor, <a href="http://users.wfu.edu/ballard/index.ht
     </div>
 
     
+
+    
+      <div class="publications">
+  <h2>Selected Publications</h2>
+  <ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Cobb22-PASC" class="col-sm-8">
+    
+      <div class="title">FIST-HOSVD: Fused In-place Sequentially Truncated Higher Order Singular Value Decomposition</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Cobb, Benjamin,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Kolla, Hemanth,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Phipps, Eric,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  and Çatalyürek, Ümit V.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Platform for Advanced Scientific Computing (PASC’22)</em>
+      
+      
+        2022
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>In this paper, several novel methods of improving the memory lo- cality of the
+    Sequentially Truncated Higher Order Singular Value Decomposition (ST-HOSVD) algorithm for
+    computing the Tucker decomposition are presented. We show how the two primary com- putational
+    kernels of the ST-HOSVD can be fused together into a single kernel to significantly improve
+    memory locality. We then extend matrix tiling techniques to tensors to further improve cache
+    utilization. This block-based approach is then coupled with a novel in-place transpose algorithm
+    to drastically reduce the memory re- quirements of the algorithm by overwriting the original
+    tensor with the result. Our approach’s effectiveness is demonstrated by compar- ing the
+    multi-threaded performance of our optimized ST-HOSVD algorithm to TuckerMPI, a state-of-the-art
+    ST-HOSVD implemen- tation, in compressing two combustion simulation datasets. We demonstrate up
+    to  135x reduction in auxiliary memory consump- tion thereby increasing the problem size that
+    can be computed for a given memory allocation by up to  3x, whilst maintaining comparable
+    runtime performance.</p>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+</div>
 
     
 
