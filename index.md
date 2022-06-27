@@ -38,15 +38,18 @@ algorithms within the Parallel Low-rank Approximations with Non-negativity Const
 large-scale datasets. This work is in close collaboration with Oak Ridge National Lab
 ([ORNL](https://www.ornl.gov/publication/planc-parallel-low-rank-approximation-nonnegativity-constraints){:target="\_blank"}).
 
-Previous to this, I worked on Sandia National Laboratories'
-([SNL](https://www.sandia.gov/){:target="\_blank"}) [GenTen](https://gitlab.com/tensors/genten){:target="\_blank"}
-project in collaboration with [Ümit V. Çatalyürek](https://faculty.cc.gatech.edu/~umit/){:target="\_blank"}, [Eric
-Phipps](https://cfwebprod.sandia.gov/cfdocs/CompResearch/templates/insert/profile.cfm?etphipp){:target="\_blank"}, and [Hemanth Kolla](https://scholar.google.com/citations?user=_9VQ8rUAAAAJ&hl=en){:target="\_blank"} as part of the Department of Energy's
-([DOE](https://www.energy.gov/){:target="\_blank"}) larger [Exascale Computing
-project](https://www.exascaleproject.org/){:target="\_blank"}. On this
-project I worked to optimize portable dense tensor kernels based upon the
+Previous to this, I worked under the supervision of [Ümit V.
+Çatalyürek](https://faculty.cc.gatech.edu/~umit/){:target="\_blank"} on the
+[GenTen](https://gitlab.com/tensors/genten){:target="\_blank"} project in collaboration with Sandia
+National Laboratories ([SNL](https://www.sandia.gov/){:target="\_blank"}) as part of the Department of
+Energy's ([DOE](https://www.energy.gov/){:target="\_blank"}) larger [Exascale Computing
+project](https://www.exascaleproject.org/){:target="\_blank"}. On this project, I had the pleasure of
+collaborating with [Eric
+Phipps](https://cfwebprod.sandia.gov/cfdocs/CompResearch/templates/insert/profile.cfm?etphipp){:target="\_blank"}
+and [Hemanth Kolla](https://scholar.google.com/citations?user=_9VQ8rUAAAAJ&hl=en){:target="\_blank"}
+as we worked to optimize portable dense tensor kernels based upon the
 [Kokkos](https://github.com/kokkos){:target="\_blank"} programming model for use in
-compressing large combustion simulation datasets. As part of this, I developed a novel in-place
+compressing large combustion simulation datasets. As part of this, we developed a novel in-place
 variant of the Sequentially Truncated Singular Value Decomposition
 ([ST-HOSVD](https://people.cs.kuleuven.be/~nick.vannieuwenhoven/papers/01-STHOSVD.pdf){:target="\_blank"})
 for computing the [Tucker
