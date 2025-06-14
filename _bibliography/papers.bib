@@ -1,115 +1,66 @@
----
----
+@INPROCEEDINGS{10825741,
+  author={Cobb, Benjamin and Velasquez, Ricardo and Vuduc, Richard and Park, Haesun},
+  booktitle={2024 IEEE International Conference on Big Data (BigData)}, 
+  title={Clustering and Topic Discovery of Multiway Data via Joint-NCMTF}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1268-1275},
+  keywords={Tensors;Big Data;Numerical models;Numerical analysis;approximation methods;text analysis;clustering methods},
+  code= {https://gitlab.com/Ben_Cobb/cmtf},
+  doi={10.1109/BigData62323.2024.10825741},
+  selected={true}
+  }
 
-@string{aps = {American Physical Society,}}
+@INPROCEEDINGS{10825324,
+  author={Eswar, Srinivas and Hayashi, Koby and Cobb, Benjamin and Kannan, Ramakrishnan and Ballard, Grey and Vuduc, Richard and Park, Haesun},
+  booktitle={2024 IEEE International Conference on Big Data (BigData)}, 
+  title={On Rank Selection for Nonnegative Matrix Factorization}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1294-1301},
+  keywords={Reviews;Big Data;Data models;Matrix decomposition;Rank selection;Nonnegative Matrix Factorization},
+  doi={10.1109/BigData62323.2024.10825324}}
 
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+
+@inproceedings{10.1145/3577193.3593733,
+author = {Eswar, Srinivas and Cobb, Benjamin and Hayashi, Koby and Kannan, Ramakrishnan and Ballard, Grey and Vuduc, Richard and Park, Haesun},
+title = {Distributed-Memory Parallel JointNMF},
+year = {2023},
+isbn = {9798400700569},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3577193.3593733},
+doi = {10.1145/3577193.3593733},
+abstract = {Joint Nonnegative Matrix Factorization (JointNMF) is a hybrid method for mining information from datasets that contain both feature and connection information. We propose distributed-memory parallelizations of three algorithms for solving the JointNMF problem based on Alternating Nonnegative Least Squares, Projected Gradient Descent, and Projected Gauss-Newton. We extend well-known communication-avoiding algorithms using a single processor grid case to our coupled case on two processor grids. We demonstrate the scalability of the algorithms on up to 960 cores (40 nodes) with 60\% parallel efficiency. The more sophisticated Alternating Nonnegative Least Squares (ANLS) and Gauss-Newton variants outperform the first-order gradient descent method in reducing the objective on large-scale problems. We perform a topic modelling task on a large corpus of academic papers that consists of over 37 million paper abstracts and nearly a billion citation relationships, demonstrating the utility and scalability of the methods.},
+booktitle = {Proceedings of the 37th ACM International Conference on Supercomputing},
+pages = {301–312},
+numpages = {12},
+keywords = {nonnegative matrix factorization, multimodal inputs, high performance computing},
+location = {Orlando, FL, USA},
+code = {https://github.com/ramkikannan/planc},
+video = {https://www.youtube.com/embed/ArJ31ty6clk?si=br8bGxWk6XRagQNj},
+series = {ICS '23},
+selected={true}
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
-}
-
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
-}
-
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
-  selected={true},
-  inspirehep_id = {3255}
-}
-
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@inproceedings{10.1145/3539781.3539798,
+author = {Cobb, Benjamin and Kolla, Hemanth and Phipps, Eric and \c{C}ataly\"{u}rek, \"{U}mit V.},
+title = {FIST-HOSVD: fused in-place sequentially truncated higher order singular value decomposition},
+year = {2022},
+isbn = {9781450394109},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3539781.3539798},
+doi = {10.1145/3539781.3539798},
+abstract = {In this paper, several novel methods of improving the memory locality of the Sequentially Truncated Higher Order Singular Value Decomposition (ST-HOSVD) algorithm for computing the Tucker decomposition are presented. We show how the two primary computational kernels of the ST-HOSVD can be fused together into a single kernel to significantly improve memory locality. We then extend matrix tiling techniques to tensors to further improve cache utilization. This block-based approach is then coupled with a novel in-place transpose algorithm to drastically reduce the memory requirements of the algorithm by overwriting the original tensor with the result. Our approach's effectiveness is demonstrated by comparing the multi-threaded performance of our optimized ST-HOSVD algorithm to TuckerMPI, a state-of-the-art ST-HOSVD implementation, in compressing two combustion simulation datasets. We demonstrate up to ~ 135x reduction in auxiliary memory consumption thereby increasing the problem size that can be computed for a given memory allocation by up to ~ 3x, whilst maintaining comparable runtime performance.},
+booktitle = {Proceedings of the Platform for Advanced Scientific Computing Conference},
+articleno = {15},
+numpages = {11},
+keywords = {tucker decomposition, reduced memory high-water mark, memory efficient, kernel fusion, in-place, data compression, cache blocking},
+location = {Basel, Switzerland},
+series = {PASC '22},
+video = {https://www.youtube.com/embed/6UShsrTOEw0?si=6r-GVuoo4Ep81yXZ},
+selected={true}
 }
