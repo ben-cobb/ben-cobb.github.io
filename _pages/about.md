@@ -37,7 +37,7 @@ I am currently a PhD student at the Georgia Institute of Technology co-advised b
 Vuduc](https://vuduc.org/v2/){:target="\_blank"} and 
 [Haesun Park](https://faculty.cc.gatech.edu/~hpark/experiences.html){:target="\_blank"}. My research
 focus is broadly on various forms of tensor decompositions for large-scale data analysis and compression. 
-Please check out the projects tab for the details of my work.
+Please check out the publications tab for the details of my work.
 
 
 Previous to attending Georgia Tech, I attended Wake Forest University, where I received my Bachelor of
