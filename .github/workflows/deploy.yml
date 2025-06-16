@@ -89,7 +89,9 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Update Bundler
-        run: gem install bundler -v 2.4.14
+        run: gem install bundler
+      - name: Increase Thread Limit
+        run: export RUBY_THREAD_VM_STACK_SIZE=10485760
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
