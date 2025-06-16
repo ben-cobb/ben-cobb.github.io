@@ -1,0 +1,181 @@
+{
+  "basics": {
+    "name": "Benjamin Cobb",
+    "label": "PhD Student in Computer Science",
+    "image": "",
+    "email": "bcobb33@gatech.edu",
+    "phone": "",
+    "url": "https://www.ben-cobb.com",
+    "summary": "PhD candidate in Computer Science at Georgia Institute of Technology with research in numerical linear algebra and high-performance computing.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Atlanta",
+      "countryCode": "US",
+      "region": "Georgia"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "ben-cobb",
+        "url": "https://www.linkedin.com/in/ben-cobb/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Georgia Institute of Technology",
+      "position": "Graduate Research Assistant",
+      "url": "",
+      "startDate": "2019-01-01",
+      "endDate": "",
+      "summary": "Researching numerical linear algebra, tensor decompositions, and high-performance computing.",
+      "highlights": []
+    },
+    {
+      "name": "Oak Ridge National Laboratory",
+      "position": "Discrete Algorithms Intern",
+      "url": "https://www.ornl.gov/group/discrete-algorithms",
+      "startDate": "2024-06-01",
+      "endDate": "2025-05-01",
+      "summary": "Worked on discrete algorithms during internships at ORNL.",
+      "highlights": []
+    },
+    {
+      "name": "Sandia National Laboratories",
+      "position": "Computer Science Research Intern",
+      "url": "",
+      "startDate": "2020-06-01",
+      "endDate": "2020-08-01",
+      "summary": "Internship during the pandemic, conducted virtually.",
+      "highlights": []
+    },
+    {
+      "name": "Wake Forest University",
+      "position": "Resident Advisor",
+      "url": "https://prod.wp.cdn.aws.wfu.edu/sites/303/2024/10/25-26-RA-Job-Description-Wake-Forest.pdf",
+      "startDate": "2016-01-01",
+      "endDate": "2019-01-01",
+      "summary": "Served as RA during undergraduate studies.",
+      "highlights": []
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Georgia Institute of Technology",
+      "location": "Atlanta, GA",
+      "url": "",
+      "area": "Computer Science",
+      "studyType": "PhD",
+      "startDate": "2019-01-01",
+      "endDate": "",
+      "score": "3.9",
+      "courses": []
+    },
+    {
+      "institution": "Wake Forest University",
+      "location": "Winston-Salem, NC",
+      "url": "",
+      "area": "Computer Science and Mathematical Business",
+      "studyType": "B.S.",
+      "startDate": "2015-01-01",
+      "endDate": "2019-01-01",
+      "score": "",
+      "courses": ["Minor in Chinese", "Graduated Magnum Cum Laude"]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [
+    {
+      "name": "Distributed-Memory Parallel JointNMF",
+      "publisher": "International Conference on Supercomputing, ICS 2023",
+      "releaseDate": "2023-06-01",
+      "url": "https://doi.org/10.1145/3577193.3593733",
+      "summary": ""
+    },
+    {
+      "name": "FIST-HOSVD: Fused In-place Sequentially Truncated Higher Order Singular Value Decomposition",
+      "publisher": "PASC 2022",
+      "releaseDate": "2022-01-01",
+      "url": "https://doi.org/10.1145/3539781.3539798",
+      "summary": ""
+    },
+    {
+      "name": "Clustering and Topic Discovery of Multiway Data via Joint-NCMTF",
+      "publisher": "IEEE Big Data",
+      "releaseDate": "2024-01-01",
+      "url": "https://ieeexplore.ieee.org/document/10825741",
+      "summary": ""
+    },
+    {
+      "name": "On Rank Selection for Nonnegative Matrix Factorization",
+      "publisher": "IEEE Big Data",
+      "releaseDate": "2024-01-01",
+      "url": "https://ieeexplore.ieee.org/document/10825324",
+      "summary": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "High-Performance Computing",
+      "level": "",
+      "icon": "",
+      "keywords": ["MPI", "CUDA", "Kokkos", "OpenMP", "cache aware programming"]
+    },
+    {
+      "name": "Programming",
+      "level": "",
+      "icon": "",
+      "keywords": ["C/C++", "MatLab", "Python"]
+    },
+    {
+      "name": "Machine Learning",
+      "level": "",
+      "icon": "",
+      "keywords": ["Deep Learning", "Neural Nets", "PyTorch", "Matrix and Tensor Factorizations"]
+    },
+    {
+      "name": "Software Development",
+      "level": "",
+      "icon": "",
+      "keywords": ["Git", "CMake", "Unit Tests", "Vim", "Slurm", "Tmux", "Linux Command Line", "Scripting"]
+    },
+    {
+      "name": "Performance Analysis and Debugging",
+      "level": "",
+      "icon": "",
+      "keywords": ["Roofline Bandwidth Analysis", "VTune", "GDB"]
+    }
+  ],
+  "languages": [],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "PLANC",
+      "summary": "Distributed MPI software package for large-scale matrix and tensor factorizations used in data analysis and compression.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://github.com/ramkikannan/planc"
+    },
+    {
+      "name": "GenTen Portable Tensor Decompositions",
+      "summary": "Performance portable software package for tensor factorizations used in data compression.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://gitlab.com/tensors/genten"
+    },
+    {
+      "name": "MATLAB Tensor Toolbox",
+      "summary": "Implemented minimum cost bipartite matching algorithm for least-squares cosine differences.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://www.tensortoolbox.org/"
+    }
+  ]
+}
