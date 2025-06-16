@@ -1,0 +1,500 @@
+  173  git add nmf.m
+  174  git commit -m "add timing breakdown to bpp"
+  175  git status
+  176  git log
+  177  git puhs
+  178  git push
+  179  cd .ssh
+  180  ls
+  181  cat config 
+  182  cat config | grep jacobi
+  183  ssh jacobi
+  184  cd Desktop/Projects/MatLab/
+  185  ls
+  186  ls
+  187  mkdir icdm_upload
+  188  cd icdm_upload
+  189  ls
+  190  git clone https://gitlab.com/Ben_Cobb/bpp.git
+  191  ls
+  192  cd bpp/
+  193  ls
+  194  git branch
+  195  git checkout act_mod_pqn_mex_icdm
+  196  git log
+  197  ls
+  198  ls old/
+  199  rm -r old/
+  200  ls
+  201  ls data/
+  202  ls data/aminer/
+  203  ls data/patents/
+  204  code ./data/aminer/patents_dataset.py
+  205  code ./data/patents_dataset.py
+  206  code ./data/patents/patents_dataset.py
+  207  ls -a
+  208  rm -r .git
+  209  ls -a
+  210  rm -r .git
+  211  ls
+  212  git status
+  213  git log
+  214  ls
+  215  code ./
+  216  ls
+  217  cd data/
+  218  ls
+  219  cd aminer/
+  220  ls
+  221  code aminer_dataset.py
+  222  code aminer_parser.py 
+  223  code clean_dataset.py 
+  224  code csv_to_json.py 
+  225  code custom_stop_words.txt
+  226  code stop_word_test.py 
+  227  cd ../patents/
+  228  ls
+  229  code count_script.py 
+  230  code custom_stop_words.txt 
+  231  code for_test.py
+  232  code glob_test.py
+  233  code patents_dataset.py
+  234  code stop_word_test.py
+  235  code test_vocab.txt
+  236  cd ../ 
+  237  ls
+  238  cd ..
+  239  ls
+  240  cd dependencies/
+  241  ls
+  242  cd pgd/
+  243  ls
+  244  code pgd_nnls.m
+  245  code apgd_nnls.m 
+  246  cd ..
+  247  ls
+  248  cd ..
+  249  ls
+  250  code cond_plot.m 
+  251  code run_test.m 
+  252  ls -a
+  253  cd ..
+  254  ls
+  255  zip -r bpp.zip bpp
+  256  ls
+  257  ls
+  258  cp -r bpp fast_nnls
+  259  ls
+  260  zip -r fast_nnls.zip fast_nnls
+  261  ls
+  262  cd fast_nnls
+  263  ls
+  264  code run_test.m 
+  265  cd pyplotter/
+  266  ls
+  267  code meanTimePlotter.py
+  268  code meanTimePlotter_comb.py
+  269  code meanTimePlotter_comb_sep.py
+  270  ls
+  271  cd ../..
+  272  ls
+  273  cd fast_nnls
+  274  code README.txt 
+  275  ssh ricardo@impulse
+  276  ssh impulse
+  277  ssh ricardo@impulse
+  278  ssh matthew@impulse
+  279  ssh matthew@100.117.188.122
+  280  ssh test@100.117.188.122
+  281  ssh test@100.117.188.122
+  282  ssh impulse
+  283  ssh test@impulse
+  284  ssh test@impulse+password
+  285  ssh test+password@impulse
+  286  ssh test+password@100.117.188.122
+  287  ssh impulse
+  288  ssh impulse
+  289  ssh impulse
+  290  ssh impulse
+  291  ssh impulse
+  292  ssh impulse
+  293  ssh impulse
+  294  ssh impulse
+  295  ssh root@impulse
+  296  ssh root@impulse
+  297  ssh ben@impulse
+  298  tailscale status
+  299  tailscale version
+  300  tailscaled status
+  301  ssh 00~100.117.188.12201~
+  302  ssh impulse
+  303  tailscale statis
+  304  tailscale status
+  305  whereis tailscale
+  306  find / -name tailscale01~
+  307  tailscale ping
+  308  ts ping
+  309  ssh impulse
+  310  ssh someones@100.117.188.122
+  311  ssh someones@impulse
+  312  ssh 100.117.188.122
+  313  ssh ben@100.117.188.122
+  314  ls
+  315  cd .ssh/
+  316  ls
+  317  cat config 
+  318  cat config | grep impulse
+  319  ssh impulse
+  320  ssh test@impulse
+  321  ssh test@impulse
+  322  ssh ben@impulse
+  323  ssh ricardo@impulse
+  324  ssh ben@impulse
+  325  ssh ricardo@impulse
+  326  ssh ben@impulse
+  327  ssh impulse
+  328  ssh ricardo@impulse
+  329  ssh matthew@impulse
+  330  ssh 100.117.188.122
+  331  ssh ben@100.117.188.122
+  332  ssh ben@100.117.188.122
+  333  ls /usr/local/bin
+  334  env | grep tail
+  335  env
+  336  ls /Library/LaunchDaemons
+  337  tailscale
+  338  /Applications/Tailscale.app/Contents/MacOS/Tailscale <command>
+  339  /Applications/Tailscale.app/Contents/MacOS/Tailscale 
+  340  /Applications/Tailscale.app/Contents/MacOS/Tailscale status
+  341  ssh impulse
+  342  /Applications/Tailscale.app/Contents/MacOS/Tailscale  ssh impulse
+  343  ssh impulse
+  344  ssh impulse
+  345  ssh impulse
+  346  ssh impulse
+  347  ssh impulse
+  348  ssh root@impulse
+  349  ssh impulse
+  350  ssh ricardo@impulse
+  351  ssh impulse:/home/
+  352  ssh impulse
+  353  ssh impulse
+  354  ssh impulse
+  355  ssh root@impulse
+  356  ssh nonroot@impulse
+  357  ssh ben@impulse
+  358  ssh lovelace
+  359  cd .ssh/
+  360  ls
+  361  cat config 
+  362  ssh lovelace
+  363  ssh l3c@login1.ornl.gov
+  364  ssh -L 4000:localhost:4000 impulse
+  365  ssh -L 4040:localhost:4000 impulse
+  366  ls
+  367  cd Desktop/Projects/
+  368  ls
+  369  cd Website/
+  370  ls
+  371  cd ben-cobb.github.io/
+  372  ls
+  373  git log
+  374  git branch
+  375  git log
+  376  git status
+  377  git diff
+  378  git status
+  379  which jekyyl
+  380  which jekyll
+  381  bundle exec jekyll serve
+  382  bundle install
+  383  bundle install
+  384  cd ..
+  385  ls
+  386  cd al-folio/
+  387  ls
+  388  git status
+  389  git log
+  390  git pull
+  391  git log
+  392  git branch
+  393  cd ..
+  394  ls
+  395  ls test/
+  396  cd test/
+  397  git clone https://github.com/alshedivat/al-folio.git
+  398  cd ..
+  399  ls
+  400  mkdir new
+  401  cd new/
+  402  ls
+  403  git clone https://github.com/alshedivat/al-folio.git
+  404  ls
+  405  cd al-folio/
+  406  ls
+  407  code ./
+  408  ls
+  409  pwd
+  410  git log
+  411  git status
+  412  bundle exec jekyll serve
+  413  bundle install
+  414  bundle exec jekyll serve
+  415  bundle exec jekyll serve -lsi
+  416  bundle exec jekyll serve
+  417  bundle install
+  418  ruby --version
+  419  ruby update
+  420  which ruby
+  421  rbenv install 3.2.2 && rbenv global 3.2.2
+  422  rbenv install --list
+  423  rbenv install 3.1.1
+  424  ruby --version
+  425  ruby update
+  426  bundle exec jekyll serve -lsi
+  427  bundle install
+  428  which ruby
+  429  /Users/bencobb/.rbenv/versions/
+  430  ls /Users/bencobb/.rbenv/versions/
+  431  ls /Users/bencobb/.rbenv/versions/3.1.1/
+  432  ls /Users/bencobb/.rbenv/versions/3.1.1/bin/
+  433  /Users/bencobb/.rbenv/versions/3.1.1/bin/bundle exec jekyll serve -lsi
+  434  /Users/bencobb/.rbenv/versions/3.1.1/bin/bundle install
+  435  ls
+  436  /Users/bencobb/.rbenv/versions/3.1.1/bin/bundle install
+  437  /Users/bencobb/.rbenv/versions/3.1.1/bin/bundle exec jekyll serve -lsi
+  438  ls
+  439  /Users/bencobb/.rbenv/versions/3.1.1/bin/bundle install
+  440  bundle --version
+  441  gem install bundler -v 2.6.9
+  442  which ruby
+  443  rbenv install 3.1.1 && rbenv global 3.1.1
+  444  rbenv global 3.1.1
+  445  which ruby
+  446  ruby --version
+  447  rbenv global 3.1.1
+  448  ruby --version
+  449  which ruby
+  450  ls /Users/bencobb/.rbenv/shims/
+  451  rbenv rehash
+  452  which ruby
+  453  ruby --version
+  454  rbenv global 3.1.1
+  455  which rbenv
+  456  ls /opt/homebrew/bin
+  457  ls
+  458  export PATH=/opt/homebrew/bin:$PATH
+  459  which ruby
+  460  /Users/bencobb/.rbenv/shims/ruby --version
+  461  ls /opt/homebrew/bin
+  462  rbenv uninstall ruby
+  463  rbenv uninstall 2.7.5p203
+  464  rbenv uninstall 2.7.5
+  465  which ruby
+  466  ruby --version
+  467  rbenv install ruby 3.1.1
+  468  rbenv install 3.1.1
+  469  which ruby
+  470  ruby --version
+  471  code /Users/bencobb/Desktop/Projects/Website/.ruby-version
+  472  ruby --version
+  473  bundle --version
+  474  bundle exec jekyll serve -lsi
+  475  bundle install
+  476  bundle exec jekyll serve -lsi
+  477  lsof -i :4000
+  478  bundle exec jekyll serve -lsi
+  479  lsof -i :4000
+  480  lsof -i :4000
+  481  kill -9 21618
+  482  lsof -i :4000
+  483  lsof -i :4000
+  484  bundle exec jekyll serve -lsi
+  485  lsof -i :4000
+  486  bundle exec jekyll serve -lsi
+  487  bundle exec jekyll serve
+  488  env
+  489  ls
+  490  env >> env.txt
+  491  ls
+  492  bundle exec jekyll serve
+  493  bundle exec jekyll serve
+  494  bundle exec jekyll serve -lsi
+  495  bundle exec jekyll serve
+  496  bundle exec jekyll serve
+  497  ls
+  498  ls
+  499  ls
+  500  ls
+  501  cd ..
+  502  ls
+  503  cd ..
+  504  ls
+  505  cd ben-cobb.github.io/
+  506  ls
+  507  git branch
+  508  ls
+  509  code index.md 
+  510  git status
+  511  git log
+  512  git checkout jekyll_source
+  513  git log
+  514  git pull
+  515  git status
+  516  pwd
+  517  cd ..
+  518  cd ..
+  519  cd -
+  520  cd new/
+  521  ls
+  522  cd ben-cobb.github.io/
+  523  ls
+  524  ls
+  525  git status
+  526  git log
+  527  pwd
+  528  git branch
+  529  git checkout jekyll_source
+  530  git branch
+  531  git log
+  532  git pull
+  533  git log
+  534  ls
+  535  code index.md 
+  536  git branch
+  537  git checkout gh-pages
+  538  git branch
+  539  git log
+  540  ls
+  541  pwd
+  542  git branch
+  543  git checkout -b new
+  544  git branch
+  545  git log
+  546  ls
+  547  rm -r ./*
+  548  ls
+  549  git log
+  550  git status
+  551  ls
+  552  pwd
+  553  cp -r /Users/bencobb/Desktop/Projects/Website/new/overwrite/al-folio/ ./
+  554  ls
+  555  git status
+  556  git branch
+  557  pwd
+  558  ls -alh
+  559  pwd
+  560  cd ..
+  561  ls
+  562  rm -r ben-cobb.github.io
+  563  ls
+  564  sudo rm -r ben-cobb.github.io/
+  565  ls
+  566  git clone https://github.com/ben-cobb/ben-cobb.github.io.git
+  567  ls
+  568  cd ben-cobb.github.io/
+  569  ls
+  570  git status
+  571  git branch
+  572  git checkout -b new
+  573  ls
+  574  ls
+  575  pwd
+  576  ls
+  577  ls -alh
+  578  find . -mindepth 1 -not -name '.git' -exec rm -rf {} +
+  579  ls
+  580  ls -alh
+  581  rsync -av --exclude='.git' --exclude='.github' /Users/bencobb/Desktop/Projects/Website/new/overwrite/al-folio/ .
+  582  ls
+  583  ls -alh
+  584  git log
+  585  ls -alh
+  586  git branch
+  587  ls .git
+  588  cd ..
+  589  sudo rm -r ben-cobb.github.io
+  590  ls
+  591  ls
+  592  git clone https://github.com/ben-cobb/ben-cobb.github.io.git
+  593  ls
+  594  cd ben-cobb.github.io/
+  595  ls
+  596  git remote add al-folio https://github.com/alshedivat/al-folio.git
+  597  git fetch al-folio main
+  598  git branch
+  599  git checkout al-folio
+  600  git checkout al-folio/main
+  601  git branch
+  602  git log
+  603  git branch
+  604  git checkout source
+  605  git log
+  606  git checkout -b al-folio
+  607  git branch
+  608  git reset --hard al-folio/source
+  609  git branch
+  610  git remote -v
+  611  git reset --hard al-folio
+  612  git branch
+  613  git log
+  614  git branch
+  615  git branch -m al-folio al-folio-transfer
+  616  git branch
+  617  git reset --hard al-folio
+  618  git reset --hard al-folio/source
+  619  git reset --hard al-folio -- source
+  620  git remote -v
+  621  git fetch al-folio && git reset --hard al-folio/{source_branch}
+  622  git fetch al-folio && git reset --hard al-folio/source
+  623  git fetch al-folio 
+  624  git branch
+  625  git remote -v
+  626  git branch -r
+  627  git checkout al-folio/main
+  628  git branch
+  629  git log
+  630  git branch
+  631  git checkout al-folio-transfer
+  632  git branch
+  633  git reset --hard al-folio/main
+  634  git log
+  635  git branch
+  636  git log
+  637  git branch
+  638  git checkout gh-pages
+  639  git branch
+  640  git remote -v
+  641  git checkout source
+  642  git branch
+  643  git checkout gh-pages
+  644  git checkout --track origin/gh-pages
+  645  git branch
+  646  git status
+  647  git log
+  648  git status
+  649  git branch
+  650  git checkout al-folio-transfer
+  651  git branch
+  652  git log
+  653  git branch
+  654  git merge -s gh-pages
+  655  git merge -s ours gh-pages
+  656  git merge -s ours gh-pages --allow-unrelated-histories
+  657  git log
+  658  git branch
+  659  git checkout gh-pages
+  660  git branch
+  661  git merge al-folio-transfer
+  662  git status
+  663  git log
+  664  git show bc0404c2e97ed978316954ded081755b5765ce3b
+  665  git log
+  666  git show bc0404c2e97ed978316954ded081755b5765ce3b
+  667  git show 9ad0fd0
+  668  git remote -v
+  669  git push origin
+  670  ls
+  671  mkdir backup 
+  672  history >> backup/hist.txt
