@@ -90,14 +90,12 @@ jobs:
           value: ${{ github.repository }}
       - name: Update Bundler
         run: gem install bundler
-      - name: Increase Thread Limit
-        run: export RUBY_THREAD_VM_STACK_SIZE=10485760
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          bundle exec jekyll build --verbose
+          bundle exec jekyll build --verbose --trace
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
