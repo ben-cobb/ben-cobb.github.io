@@ -89,13 +89,13 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Update Bundler
-        run: gem install bundler
+        run: gem install bundler -v 2.4.14
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          bundle exec jekyll build
+          bundle exec jekyll build --verbose
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
