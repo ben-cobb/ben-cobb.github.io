@@ -1,0 +1,162 @@
+import json
+
+# Constructing the JSON structure from the parsed LaTeX content
+
+resume_json = {
+    "basics": {
+        "name": "Your Name",
+        "label": "Your Title",
+        "image": "",
+        "email": "your.email@example.com",
+        "phone": "Your Phone",
+        "url": "https://your-website.com",
+        "summary": "Short professional summary.",
+        "location": {
+            "address": "Your Address",
+            "postalCode": "Your Postal Code",
+            "city": "Your City",
+            "countryCode": "US",
+            "region": "Your Region"
+        },
+        "profiles": []
+    },
+    "education": [
+        {
+            "institution": "Georgia Institute of Technology",
+            "location": "Atlanta, GA",
+            "url": "",
+            "area": "Computer Science",
+            "studyType": "PhD",
+            "startDate": "2019-01-01",
+            "endDate": "",
+            "score": "GPA: 3.9",
+            "courses": []
+        },
+        {
+            "institution": "Wake Forest University",
+            "location": "",
+            "url": "",
+            "area": "Computer Science, Mathematical Business",
+            "studyType": "B.S.",
+            "startDate": "2015-01-01",
+            "endDate": "2019-01-01",
+            "score": "",
+            "courses": ["Minor in Chinese", "Graduated Magnum Cum Laude"]
+        }
+    ],
+    "work": [
+        {
+            "name": "Georgia Institute of Technology",
+            "position": "Graduate Research Assistant",
+            "url": "",
+            "startDate": "2019-01-01",
+            "endDate": "",
+            "summary": "Conducts research at the intersection of numerical linear algebra and high-performance computing.",
+            "highlights": [
+                "Currently researching nonnegativity constrained low-rank approximations.",
+                "Previously researched Tucker decomposition and Coupled Matrix Tensor Factorizations."
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Presidential Fellowship (PF)",
+            "date": "2019-01-01",
+            "awarder": "Georgia Institute of Technology",
+            "url": "https://grad.gatech.edu/presidents-fellowship",
+            "summary": "Awarded to top 10% of Georgia Tech doctoral applicants. Renewable for up to three additional years."
+        },
+        {
+            "title": "DOE CSGF",
+            "date": "2018-06-01",
+            "awarder": "Department of Energy",
+            "url": "https://www.krellinst.org/csgf",
+            "summary": "Department of Energy Computational Science Graduate Fellowship."
+        }
+    ],
+    "skills": [
+        {
+            "name": "Main Programming Languages",
+            "level": "",
+            "icon": "",
+            "keywords": ["C/C++", "MatLab", "Python"]
+        },
+        {
+            "name": "High Performance Computing",
+            "level": "",
+            "icon": "",
+            "keywords": ["MPI", "CUDA", "Kokkos", "OpenMP", "cache aware programming"]
+        },
+        {
+            "name": "Software Development",
+            "level": "",
+            "icon": "",
+            "keywords": ["Git", "CMake", "Unit Tests", "Vim", "Slurm", "Tmux", "Linux Command Line", "Scripting"]
+        },
+        {
+            "name": "Performance Analysis and Debugging",
+            "level": "",
+            "icon": "",
+            "keywords": ["Roofline Bandwidth Analysis", "VTune", "GNU Debugger (GDB)"]
+        },
+        {
+            "name": "Machine Learning",
+            "level": "",
+            "icon": "",
+            "keywords": ["Deep Learning", "Neural Nets", "PyTorch", "Matrix and Tensor Factorizations"]
+        }
+    ],
+    "courses": [
+        {
+            "name": "Deep Learning",
+            "date": "2022-09-01",
+            "issuer": "Georgia Institute of Technology",
+            "score": "A"
+        },
+        {
+            "name": "High Performance Computer Architecture",
+            "date": "2021-01-01",
+            "issuer": "Georgia Institute of Technology",
+            "score": "A"
+        },
+        {
+            "name": "High Performance Parallel Computing",
+            "date": "2021-09-01",
+            "issuer": "Georgia Institute of Technology",
+            "score": "A"
+        }
+    ],
+    "publications": [
+        {
+            "name": "FIST-HOSVD: Fused In-place Sequentially Truncated Higher Order Singular Value Decomposition",
+            "publisher": "Association for Computing Machinery",
+            "releaseDate": "2022-01-01",
+            "url": "https://doi.org/10.1145/3539781.3539798",
+            "summary": "Presents an in-place method for tensor decomposition to improve memory and performance."
+        }
+    ],
+    "presentations": [
+        {
+            "name": "International Conference on Supercomputing",
+            "publisher": "ICS23",
+            "releaseDate": "2023-06-01",
+            "url": "https://dl.acm.org/doi/abs/10.1145/3577193.3593733",
+            "summary": "Presented Distributed-Memory Parallel JointNMF paper and explained distributed algorithm design."
+        }
+    ],
+    "projects": [
+        {
+            "name": "PLANC: Parallel Low-rank Approximations with Non-negativity Constraints",
+            "summary": "Distributed MPI software package for large-scale matrix and tensor factorizations used in data analysis and compression.",
+            "highlights": [],
+            "startDate": "",
+            "endDate": "",
+            "url": "https://github.com/ramkikannan/planc"
+        }
+    ],
+    "certificates": [],
+    "volunteer": [],
+    "interests": [],
+    "languages": [],
+    "references": []
+}
