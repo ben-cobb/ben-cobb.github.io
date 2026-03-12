@@ -10,3 +10,5 @@ assets/libs/
 node_modules/
 vendor
 .idea
+docs/docs/
+_site/
