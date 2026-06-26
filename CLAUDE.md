@@ -4,25 +4,21 @@
 Personal academic website for Benjamin M. Cobb. Built with Jekyll using the **al-folio** theme. Hosted on GitHub Pages at `ben-cobb.github.io`.
 
 ## Git Branches
-- `source` - Main development branch
-- `test` - Deployment branch (GitHub Pages serves from `docs/` on this branch)
+- `test` - Canonical source **and** the auto-deploy branch. Pushing here triggers GitHub Actions (`.github/workflows/deploy.yml`) to build and publish the site to www.ben-cobb.com.
+- Legacy/unused: `source`, `main`, `jekyll_source` (older snapshots — do not use).
 
 ## Development & Deployment
+Deployment is automated via GitHub Actions — just edit source files and push to `test`:
 ```bash
-# 1. Build and preview locally
-bundle exec jekyll serve    # generates _site/, serves at localhost:4000
-
-# 2. Verify everything looks correct in the browser
-
-# 3. Copy built site to deployment directory
-cp -r _site/ docs/
-
-# 4. Commit and push (include docs/)
 git add .
 git commit -m "description of changes"
-git push origin test
+git push origin test     # GitHub Actions builds + deploys -> live in ~3-4 min
 ```
-GitHub Pages is configured to serve from the `docs/` directory on the `test` branch.
+No manual build or `docs/` copying is needed. To preview locally before pushing (optional):
+```bash
+bundle exec jekyll serve   # serves at http://localhost:4000
+```
+**Deployment details:** GitHub Pages "Source" is set to **GitHub Actions**. The deploy workflow installs gems serially (avoids a Bundler parallel-installer deadlock), builds with `JEKYLL_ENV=production`, and publishes `_site` via `actions/deploy-pages`. The custom domain (www.ben-cobb.com) is preserved by the root `CNAME` file. The build output is no longer committed — do not re-create a `docs/` folder.
 
 ## Directory Structure
 ```
