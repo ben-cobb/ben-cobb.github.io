@@ -77,9 +77,9 @@ jobs:
 
   deploy:
     needs: build
-    # Only publish on a real push to the canonical branch (test). PRs and the
-    # temporary prep-branch trigger run the build job above as a check only.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Publish on a push to main or a manual run (workflow_dispatch); PRs to main
+    # run the build job above as a check only (no deploy).
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
