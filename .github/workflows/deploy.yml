@@ -17,7 +17,6 @@ on:
   push:
     branches:
       - test
-      - claude/website-repo-review-22acd4 # TEMP: validate the build on the prep branch; remove before final handoff
   pull_request:
     branches:
       - test
