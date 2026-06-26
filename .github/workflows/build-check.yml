@@ -1,10 +1,12 @@
 name: Build check (CI validation)
 
 # Validates that the al-folio site builds in GitHub Actions on the real source.
-# This is BUILD-ONLY: it uploads the generated _site as a downloadable artifact.
-# It does NOT deploy anything and does NOT change any GitHub Pages settings, so
-# it is safe to run on a feature branch with no impact on the live site.
-# Mirrors the dependency recipe from al-folio's bundled deploy.yml.
+# BUILD-ONLY: uploads the generated _site as a downloadable artifact. Does NOT
+# deploy and does NOT change any GitHub Pages settings — safe on a feature branch.
+#
+# Gems are installed SERIALLY (--jobs 1) on purpose: Bundler 2.6.9's parallel
+# installer deadlocks on this Gemfile ("No live threads left. Deadlock?"), which
+# is the root cause of the previously failing deploy.yml runs.
 
 on:
   push:
@@ -26,7 +28,22 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
-          bundler-cache: true
+          # bundler-cache intentionally NOT enabled: it runs `bundle install --jobs 4`,
+          # whose parallel installer deadlocks here. We install serially below instead.
+
+      - name: Cache gems
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: gems-${{ runner.os }}-ruby3.3.5-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            gems-${{ runner.os }}-ruby3.3.5-
+
+      - name: Install gems (serial — avoids the parallel-installer deadlock)
+        run: |
+          gem install bundler -v 2.6.9
+          bundle config set --local path vendor/bundle
+          bundle install --jobs 1 --retry 3
 
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
@@ -38,9 +55,6 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
-
-      - name: Update Bundler
-        run: gem install bundler
 
       - name: Build site 🔧
         run: |
