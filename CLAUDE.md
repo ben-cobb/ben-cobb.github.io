@@ -4,15 +4,14 @@
 Personal academic website for Benjamin M. Cobb. Built with Jekyll using the **al-folio** theme. Hosted on GitHub Pages at `ben-cobb.github.io`.
 
 ## Git Branches
-- `test` - Canonical source **and** the auto-deploy branch. Pushing here triggers GitHub Actions (`.github/workflows/deploy.yml`) to build and publish the site to www.ben-cobb.com.
-- Legacy/unused: `source`, `main`, `jekyll_source` (older snapshots — do not use).
+- `main` - The single source-of-truth branch: where you edit **and** what auto-deploys. Pushing here triggers GitHub Actions (`.github/workflows/deploy.yml`) to build and publish the site to www.ben-cobb.com.
 
 ## Development & Deployment
 Deployment is automated via GitHub Actions — just edit source files and push to `test`:
 ```bash
 git add .
 git commit -m "description of changes"
-git push origin test     # GitHub Actions builds + deploys -> live in ~3-4 min
+git push origin main     # GitHub Actions builds + deploys -> live in ~3-4 min
 ```
 No manual build or `docs/` copying is needed. To preview locally before pushing (optional):
 ```bash

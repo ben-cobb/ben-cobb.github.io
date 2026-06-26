@@ -16,10 +16,10 @@ name: Deploy site
 on:
   push:
     branches:
-      - test
+      - main
   pull_request:
     branches:
-      - test
+      - main
   workflow_dispatch:
 
 permissions:
@@ -79,7 +79,7 @@ jobs:
     needs: build
     # Only publish on a real push to the canonical branch (test). PRs and the
     # temporary prep-branch trigger run the build job above as a check only.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/test'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
