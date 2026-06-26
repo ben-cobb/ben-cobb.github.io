@@ -4,9 +4,11 @@ name: Build check (CI validation)
 # BUILD-ONLY: uploads the generated _site as a downloadable artifact. Does NOT
 # deploy and does NOT change any GitHub Pages settings — safe on a feature branch.
 #
-# Gems are installed SERIALLY (--jobs 1) on purpose: Bundler 2.6.9's parallel
-# installer deadlocks on this Gemfile ("No live threads left. Deadlock?"), which
-# is the root cause of the previously failing deploy.yml runs.
+# Notes on the two CI-specific fixes:
+#  - Gems are installed SERIALLY (--jobs 1): Bundler 2.6.9's parallel installer
+#    deadlocks on this Gemfile ("No live threads left. Deadlock?").
+#  - nokogiri is built against the system libxml2/libxslt (apt) to avoid a
+#    fragile vendored source build that fails on mini_portile2 activation.
 
 on:
   push:
@@ -39,10 +41,16 @@ jobs:
           restore-keys: |
             gems-${{ runner.os }}-ruby3.3.5-
 
-      - name: Install gems (serial — avoids the parallel-installer deadlock)
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick libxml2-dev libxslt1-dev pkg-config
+
+      - name: Install gems (serial; nokogiri uses system libxml2)
         run: |
           gem install bundler -v 2.6.9
           bundle config set --local path vendor/bundle
+          bundle config set --local build.nokogiri --use-system-libraries
           bundle install --jobs 1 --retry 3
 
       - name: Setup Python 🐍
@@ -51,10 +59,8 @@ jobs:
           python-version: "3.13"
           cache: "pip"
 
-      - name: Install system & Python dependencies
-        run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
+      - name: Install Python dependencies (Jupyter notebooks)
+        run: pip3 install --upgrade nbconvert
 
       - name: Build site 🔧
         run: |
