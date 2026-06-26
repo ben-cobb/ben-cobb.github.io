@@ -1,0 +1,60 @@
+name: Build check (CI validation)
+
+# Validates that the al-folio site builds in GitHub Actions on the real source.
+# This is BUILD-ONLY: it uploads the generated _site as a downloadable artifact.
+# It does NOT deploy anything and does NOT change any GitHub Pages settings, so
+# it is safe to run on a feature branch with no impact on the live site.
+# Mirrors the dependency recipe from al-folio's bundled deploy.yml.
+
+on:
+  push:
+    branches:
+      - claude/website-repo-review-22acd4
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Install system & Python dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+
+      - name: Update Bundler
+        run: gem install bundler
+
+      - name: Build site 🔧
+        run: |
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --verbose --trace
+
+      - name: Purge unused CSS 🧹
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+
+      - name: Upload built site artifact ⬆️
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          retention-days: 7
