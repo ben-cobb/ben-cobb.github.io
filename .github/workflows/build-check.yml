@@ -1,17 +1,9 @@
 name: Build check (CI validation)
 
-# Validates that the al-folio site builds in GitHub Actions on the real source.
-# BUILD-ONLY: uploads the generated _site as a downloadable artifact. Does NOT
-# deploy and does NOT change any GitHub Pages settings — safe on a feature branch.
-#
-# CI-specific handling:
-#  - Gems install SERIALLY (--jobs 1): Bundler 2.6.9's parallel installer
-#    deadlocks on this Gemfile ("No live threads left. Deadlock?").
-#  - Gemfile.lock is resolved fresh on Linux: the committed lock was generated on
-#    macOS, so its precompiled Linux gems (nokogiri/ffi) are treated as "yanked"
-#    on the runner, forcing a broken source build. A fresh resolve uses the
-#    correct precompiled Linux binaries. (Only affects the runner; the committed
-#    lock is untouched.)
+# Builds the al-folio site in CI (validation) and, on a fully green build,
+# commits the Linux-resolved Gemfile.lock back to this branch so deploys use
+# pinned, CI-compatible gem versions. The auto-commit uses [skip ci] and only
+# runs when the lock actually changed, so it cannot loop.
 
 on:
   push:
@@ -20,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -33,8 +25,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
-          # bundler-cache intentionally NOT enabled: it runs `bundle install --jobs 4`,
-          # whose parallel installer deadlocks here. We install serially below instead.
 
       - name: Install system dependencies
         run: |
@@ -71,3 +61,16 @@ jobs:
           name: site
           path: _site
           retention-days: 7
+
+      - name: Commit Linux-resolved Gemfile.lock
+        if: success()
+        run: |
+          if ! git diff --quiet -- Gemfile.lock; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add Gemfile.lock
+            git commit -m "Commit Linux-resolved Gemfile.lock [skip ci]"
+            git push origin HEAD:refs/heads/claude/website-repo-review-22acd4
+          else
+            echo "Gemfile.lock unchanged; nothing to commit."
+          fi
