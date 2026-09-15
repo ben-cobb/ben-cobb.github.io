@@ -127,12 +127,18 @@ Your content here, in **Markdown** or HTML.
   new pages.
 
 ### 3.4 Update the CV
-Two parts, in **`_pages/cv.md`**:
+Two parts, in **`_pages/cv.md`** and **`assets/json/resume.json`**:
 - The **"Download PDF" button** points at `cv_pdf: ben_cobb_resume.pdf` (a file in
   `assets/pdf/`). To update the PDF, replace that file (keep the name, or update
   the `cv_pdf:` value).
-- The **on-page CV content** is driven by structured data in **`_data/cv.yml`**
-  (education, experience, skills, etc.). Edit that YAML to change the rendered CV.
+- The **on-page CV content** is driven by **`assets/json/resume.json`** (JSON Resume
+  format: `basics`, `work`, `education`, `publications`, `skills`, `projects`, ...).
+  It is loaded by the `jekyll-get-json` plugin (`jekyll_get_json:` in `_config.yml`)
+  and rendered by `_layouts/cv.liquid` and `_includes/resume/*.liquid`. Work and
+  education entries are sorted by `startDate` (newest first) and an empty `endDate`
+  renders as "Present". Keep the file valid JSON with 2-space indentation.
+  `_data/cv.yml` is unused theme boilerplate and is ignored whenever
+  `resume.json` exists.
 
 ### 3.5 Add a book review
 Create **`_books/<slug>.md`**:
@@ -159,7 +165,10 @@ Put cover images in **`assets/img/book_covers/`**. The bookshelf grid at
 `/books/` updates automatically.
 
 ### 3.6 Add news / announcements (optional — not currently enabled)
-The theme supports a news feed, but it isn't turned on right now. To enable it:
+The theme supports a news feed, but it isn't turned on right now. **Before enabling
+it, restore `_includes/news.liquid` from upstream al-folio.** This fork is missing that
+file, and the homepage layout includes it as soon as announcements are enabled, so the
+build fails without it. To enable it:
 1. Create a **`_news/`** folder with short Markdown files, e.g.
    `_news/2025-01-01-announcement.md`:
    ```markdown
@@ -185,7 +194,8 @@ The theme supports a news feed, but it isn't turned on right now. To enable it:
   480/800/1400px widths (via ImageMagick), so just add a normal `.jpg`/`.png`.
 - PDFs: **`assets/pdf/`**.
 - Profile/social links and other structured data live in **`_data/`**
-  (`socials.yml`, `coauthors.yml`, `venues.yml`, `repositories.yml`, `cv.yml`).
+  (`socials.yml`, `coauthors.yml`, `venues.yml`, `repositories.yml`). The on-page
+  CV data lives in **`assets/json/resume.json`** (see 3.4).
 
 ---
 
@@ -248,8 +258,9 @@ The site was migrated from a fragile manual process to automated CI deployment:
 | `_pages/` | Site pages (about/home, cv, publications, teaching, books, …) |
 | `_bibliography/papers.bib` | Publications (BibTeX, newest first) |
 | `_books/` | Book reviews |
-| `_data/` | Structured data: `cv.yml`, `coauthors.yml`, `venues.yml`, `socials.yml`, `repositories.yml` |
+| `_data/` | Structured data: `coauthors.yml`, `venues.yml`, `socials.yml`, `repositories.yml` (`cv.yml` is unused boilerplate) |
 | `assets/img/`, `assets/pdf/` | Images (auto-responsive) and PDFs |
+| `assets/json/resume.json` | On-page CV content (JSON Resume format), rendered at `/cv/` |
 | `_layouts/`, `_includes/`, `_sass/`, `_plugins/` | Theme internals (rarely edited) |
 | `CLAUDE.md` / `AGENTS.md` | Short orientation notes for AI coding assistants |
 

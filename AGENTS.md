@@ -1,13 +1,13 @@
 # AGENTS.md - Project Guide
 
 ## Overview
-Personal academic website for Benjamin M. Cobb. Built with Jekyll using the **al-folio** theme. Hosted on GitHub Pages at `ben-cobb.github.io`.
+Personal academic website for Benjamin M. Cobb. Built with Jekyll using the **al-folio** theme. Hosted on GitHub Pages at www.ben-cobb.com (repo `ben-cobb/ben-cobb.github.io`).
 
 ## Git Branches
 - `main` - The single source-of-truth branch: where you edit **and** what auto-deploys. Pushing here triggers GitHub Actions (`.github/workflows/deploy.yml`) to build and publish the site to www.ben-cobb.com.
 
 ## Development & Deployment
-Deployment is automated via GitHub Actions — just edit source files and push to `test`:
+Deployment is automated via GitHub Actions — just edit source files and push to `main`:
 ```bash
 git add .
 git commit -m "description of changes"
@@ -23,7 +23,7 @@ bundle exec jekyll serve   # serves at http://localhost:4000
 ```
 _bibliography/    # papers.bib (publications)
 _books/           # Book review markdown files
-_data/            # YAML data (coauthors, venues, cv, socials, repositories)
+_data/            # YAML data (coauthors, venues, socials, repositories); cv.yml is unused boilerplate
 _includes/        # Reusable Liquid template partials
 _layouts/         # Page layout templates (.liquid)
 _pages/           # Site pages (about, publications, cv, books, teaching, profiles)
@@ -33,7 +33,7 @@ _site/            # Generated output (do not edit)
 assets/
   img/            # Images (auto-generates responsive WebP at 480/800/1400px)
   pdf/            # Publication PDFs and resume
-  json/           # resume.json
+  json/           # resume.json (drives the on-page CV at /cv/)
   jupyter/        # Rendered Jupyter notebooks
 ```
 
@@ -102,11 +102,11 @@ Review content here.
 ## Key Data Files
 - `_data/coauthors.yml` - Author name variants and profile URLs (for linking in publications)
 - `_data/venues.yml` - Conference/journal abbreviations, URLs, and badge colors
-- `_data/cv.yml` - Structured CV data
+- `assets/json/resume.json` - CV page data (JSON Resume format), rendered at `/cv/` by `_layouts/cv.liquid` and `_includes/resume/*.liquid`; `_data/cv.yml` is unused boilerplate
 - `_data/repositories.yml` - GitHub repos shown on the site
 
 ## Page Layouts
-- `about` - Homepage with profile, selected papers, news
+- `about` - Homepage with profile and selected papers
 - `page` - Generic content page
 - `cv` - CV/resume page
 - `bib` - Individual publication rendering (used by jekyll-scholar)

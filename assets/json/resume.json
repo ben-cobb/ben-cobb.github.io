@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Benjamin Cobb",
-    "label": "PhD Student in Computer Science",
+    "label": "Incoming HPC Engineer, Citadel Securities",
     "image": "",
-    "email": "bcobb33@gatech.edu",
+    "email": "benjamincobb00@gmail.com",
     "phone": "",
     "url": "https://www.ben-cobb.com",
-    "summary": "PhD student in Computer Science at Georgia Institute of Technology with research in numerical linear algebra and high-performance computing.",
+    "summary": "PhD in Computer Science from the Georgia Institute of Technology (August 2026), with research in numerical linear algebra, tensor decompositions, and high-performance computing. Joining Citadel Securities as an HPC Engineer in November 2026.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -24,12 +24,21 @@
   },
   "work": [
     {
+      "name": "Citadel Securities",
+      "position": "HPC Engineer",
+      "url": "https://www.citadelsecurities.com/",
+      "startDate": "2026-11-01",
+      "endDate": "",
+      "summary": "Incoming role, starting November 2026.",
+      "highlights": []
+    },
+    {
       "name": "Georgia Institute of Technology",
       "position": "Graduate Research Assistant",
       "url": "",
       "startDate": "2019-01-01",
-      "endDate": "",
-      "summary": "Researching numerical linear algebra, tensor decompositions, and high-performance computing.",
+      "endDate": "2026-08-01",
+      "summary": "Researched numerical linear algebra, tensor decompositions, and high-performance computing.",
       "highlights": []
     },
     {
@@ -69,9 +78,9 @@
       "area": "Computer Science",
       "studyType": "PhD",
       "startDate": "2019-01-01",
-      "endDate": "",
+      "endDate": "2026-08-01",
       "score": "3.9",
-      "courses": []
+      "courses": ["Minor in Mathematics", "Advisors: Richard Vuduc and Haesun Park"]
     },
     {
       "institution": "Wake Forest University",
@@ -82,12 +91,19 @@
       "startDate": "2015-01-01",
       "endDate": "2019-01-01",
       "score": "",
-      "courses": ["Minor in Chinese", "Graduated Magnum Cum Laude"]
+      "courses": ["Minor in Chinese", "Graduated Magna Cum Laude"]
     }
   ],
   "awards": [],
   "certificates": [],
   "publications": [
+    {
+      "name": "Fast Active-Set Thresholding Method for Nonnegative Least Squares",
+      "publisher": "IEEE Big Data",
+      "releaseDate": "2025-12-01",
+      "url": "https://doi.org/10.1109/BigData66926.2025.11402623",
+      "summary": ""
+    },
     {
       "name": "Distributed-Memory Parallel JointNMF",
       "publisher": "International Conference on Supercomputing, ICS 2023",
@@ -128,7 +144,7 @@
       "name": "Programming",
       "level": "",
       "icon": "",
-      "keywords": ["C/C++", "MatLab", "Python"]
+      "keywords": ["C/C++", "MATLAB", "Python"]
     },
     {
       "name": "Machine Learning",
