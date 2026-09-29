@@ -10,8 +10,9 @@ name: Deploy site
 #    this Gemfile ("No live threads left. Deadlock?").
 #  - The committed Gemfile.lock is Linux-resolved, so precompiled Linux gems are
 #    used (no broken nokogiri source build).
-#  - The custom domain is preserved via the root /CNAME file, which _config.yml's
-#    keep_files copies into _site.
+#  - The custom domain is set under Settings -> Pages. With this Source GitHub
+#    ignores the root /CNAME file, which is kept as a record only
+#    (see MAINTENANCE.md, section 7).
 
 on:
   push:

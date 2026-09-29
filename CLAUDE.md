@@ -17,7 +17,7 @@ No manual build or `docs/` copying is needed. To preview locally before pushing 
 ```bash
 bundle exec jekyll serve   # serves at http://localhost:4000
 ```
-**Deployment details:** GitHub Pages "Source" is set to **GitHub Actions**. The deploy workflow installs gems serially (avoids a Bundler parallel-installer deadlock), builds with `JEKYLL_ENV=production`, and publishes `_site` via `actions/deploy-pages`. The custom domain (www.ben-cobb.com) is preserved by the root `CNAME` file. The build output is no longer committed — do not re-create a `docs/` folder.
+**Deployment details:** GitHub Pages "Source" is set to **GitHub Actions**. The deploy workflow installs gems serially (avoids a Bundler parallel-installer deadlock), builds with `JEKYLL_ENV=production`, and publishes `_site` via `actions/deploy-pages`. The custom domain (www.ben-cobb.com) is set in the repository's Pages settings; with this Source GitHub ignores the root `CNAME` file. DNS is at Namecheap — read `MAINTENANCE.md` section 7 before changing the domain, DNS or HTTPS settings. The build output is no longer committed — do not re-create a `docs/` folder.
 
 ## Directory Structure
 ```
