@@ -10,9 +10,9 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Atlanta",
+      "city": "Miami",
       "countryCode": "US",
-      "region": "Georgia"
+      "region": "Florida"
     },
     "profiles": [
       {
@@ -26,6 +26,7 @@
     {
       "name": "Citadel Securities",
       "position": "Software Engineer",
+      "location": "Miami, FL",
       "url": "https://www.citadelsecurities.com/",
       "startDate": "2026-11-02",
       "endDate": "",
