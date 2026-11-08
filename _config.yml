@@ -9,7 +9,7 @@ last_name: Cobb
 contact_note: >
   Email is generally the best way to reach me
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website of Benjamin M. Cobb, incoming HPC Engineer at Citadel Securities and PhD in Computer Science
+  Personal website of Benjamin M. Cobb, Software Engineer at Citadel Securities and PhD in Computer Science
   from the Georgia Institute of Technology. Research in tensor decompositions and high-performance computing.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.

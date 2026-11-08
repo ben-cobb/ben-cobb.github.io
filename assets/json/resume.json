@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Benjamin Cobb",
-    "label": "Incoming HPC Engineer, Citadel Securities",
+    "label": "Software Engineer, Citadel Securities",
     "image": "",
     "email": "benjamincobb00@gmail.com",
     "phone": "",
     "url": "https://www.ben-cobb.com",
-    "summary": "PhD in Computer Science from the Georgia Institute of Technology (August 2026), with research in numerical linear algebra, tensor decompositions, and high-performance computing. Joining Citadel Securities as an HPC Engineer in November 2026.",
+    "summary": "PhD in Computer Science from the Georgia Institute of Technology (August 2026), with research in numerical linear algebra, tensor decompositions, and high-performance computing. Software Engineer at Citadel Securities since November 2026.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -25,11 +25,11 @@
   "work": [
     {
       "name": "Citadel Securities",
-      "position": "HPC Engineer",
+      "position": "Software Engineer",
       "url": "https://www.citadelsecurities.com/",
-      "startDate": "2026-11-01",
+      "startDate": "2026-11-02",
       "endDate": "",
-      "summary": "Incoming role, starting November 2026.",
+      "summary": "",
       "highlights": []
     },
     {
