@@ -33,7 +33,10 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Pinned to 24.04: ubuntu-latest moved to 26.04 in late 2026 and ruby/setup-ruby
+    # has no prebuilt Ruby 3.3.5 for it ("Unavailable version 3.3.5 for ruby on
+    # ubuntu-26.04"). Bump the image together with ruby-version/Gemfile.lock.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
