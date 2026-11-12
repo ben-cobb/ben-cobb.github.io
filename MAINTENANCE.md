@@ -28,8 +28,9 @@ edit source on `main`  ──push──►  GitHub Actions (.github/workflows/de
   to GitHub Pages via `actions/deploy-pages`.
 - **GitHub Pages settings:** Source = **"GitHub Actions"**; the `github-pages`
   environment has deployment branches set to **No restriction**; the custom
-  domain **www.ben-cobb.com** is preserved by the root **`CNAME`** file; **Enforce
-  HTTPS** is on.
+  domain **www.ben-cobb.com** is set under **Settings → Pages** (with this Source
+  GitHub ignores the root `CNAME` file); **Enforce HTTPS** is on. DNS and the
+  certificate are covered in Section 7.
 - **Nothing is hand-built.** The old model (build locally → `cp -r _site/ docs/` →
   commit the built output) is gone. **Do not re-create a `docs/` folder** — it is
   git-ignored and excluded from the build on purpose.
@@ -209,6 +210,9 @@ build fails without it. To enable it:
 (`JEKYLL_ENV=production`), which minifies HTML/CSS/JS and is stricter. To reproduce
 locally: `JEKYLL_ENV=production bundle exec jekyll build`.
 
+**If browsers show a certificate warning** ("Your connection is not private"): that
+is not a build problem, and redeploying does not fix it. See Section 7.
+
 **Known issues that were fixed (and could recur):**
 - **Never commit a `docs/` folder.** It's git-ignored and excluded from the build.
   Re-introducing it causes Jekyll to ingest its own output recursively and can
@@ -243,7 +247,7 @@ The site was migrated from a fragile manual process to automated CI deployment:
 | Confusing branch sprawl (`source`, `master`, `main`, `test`, `jekyll_source`) | Single branch: **`main`** (default) |
 | Built output (`docs/`) committed; recursively nested 2,400+ stale files | No built output in git; `docs/` removed and ignored |
 | `Gemfile.lock` generated on macOS (broke CI) | Linux-resolved `Gemfile.lock` committed |
-| `url` was `https://ben-cobb.github.io` (wrong) | `url: https://www.ben-cobb.com`; custom domain via root `CNAME` |
+| `url` was `https://ben-cobb.github.io` (wrong) | `url: https://www.ben-cobb.com`; custom domain set in Pages settings |
 
 ---
 
@@ -253,7 +257,7 @@ The site was migrated from a fragile manual process to automated CI deployment:
 |------|---------|
 | `.github/workflows/deploy.yml` | The build + deploy pipeline (push to `main` → live) |
 | `_config.yml` | Jekyll/site configuration (`url`, plugins, excludes, etc.) |
-| `CNAME` | Custom domain (`www.ben-cobb.com`); published into `_site` |
+| `CNAME` | Names the custom domain (`www.ben-cobb.com`). A record only: with the Actions source GitHub ignores it (see §7) |
 | `Gemfile` / `Gemfile.lock` | Ruby gem dependencies (lock is Linux-resolved — see §4) |
 | `_pages/` | Site pages (about/home, cv, publications, teaching, books, …) |
 | `_bibliography/papers.bib` | Publications (BibTeX, newest first) |
@@ -266,3 +270,81 @@ The site was migrated from a fragile manual process to automated CI deployment:
 
 For deeper theme customization, see the upstream al-folio docs (`README.md`,
 `CUSTOMIZE.md`, `FAQ.md` in this repo, and <https://github.com/alshedivat/al-folio>).
+
+---
+
+## 7. Domain, DNS and HTTPS certificate
+
+**www.ben-cobb.com** is this site's custom domain. GitHub serves the account's project
+sites under it as well (for example `www.ben-cobb.com/mmu-json-parser/`), so when the
+certificate breaks, every one of them breaks with it. None of this lives in the
+repository's files, and redeploying the site has no effect on it.
+
+### 7.1 Where each piece lives
+
+| Piece | Where | Notes |
+|-------|-------|-------|
+| Custom domain | This repo → **Settings → Pages** | With Source = "GitHub Actions", GitHub ignores the root `CNAME` file |
+| Enforce HTTPS | Same page | On. Removing and re-adding the domain switches it off |
+| Verified domain | Account **Settings → Pages** | `ben-cobb.com`, verified 2026-09-28. Covers `www`. Stops anyone else claiming the domain |
+| DNS records | Namecheap → Domain List → `ben-cobb.com` → Manage → **Advanced DNS** | The list shows five rows; click **Show more** for the rest |
+| E-mail forwarding | Namecheap → same page → **Mail Settings** | Namecheap manages the MX and SPF records. Leave them alone |
+| Certificate | Issued to GitHub by Let's Encrypt | Valid 90 days. GitHub renews it about 30 days before it expires |
+| Registration | Namecheap | Expires 2027-01-26. Keep auto-renew on |
+
+### 7.2 The DNS records
+
+| Type | Host | Value |
+|------|------|-------|
+| CNAME | `www` | `ben-cobb.github.io.` |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| TXT | `_github-pages-challenge-ben-cobb` | The code GitHub showed when the domain was verified. Never delete |
+
+- **`www` carries the CNAME and nothing else.** No A records, no redirect.
+- **No URL Redirect Records.** Each one adds an address record for Namecheap's
+  redirect server (`162.255.119.104`) that the panel never lists. GitHub does not
+  issue a certificate for a name that leads to an address other than its own.
+- **No CDN proxy** (such as Cloudflare's orange cloud) in front.
+- GitHub redirects the bare domain to `www`, so no redirect is needed at Namecheap.
+
+### 7.3 Checking
+
+```bash
+# www: expect one CNAME line and no A lines
+dig +norecurse +noall +answer @dns1.registrar-servers.com www.ben-cobb.com A
+
+# bare domain: expect exactly the four addresses above
+dig +short ben-cobb.com A
+
+# the certificate as GitHub sees it: state "approved", expiry in the future
+gh api repos/ben-cobb/ben-cobb.github.io/pages --jq .https_certificate
+
+# GitHub's own DNS check: is_valid should be true for both hosts
+gh api repos/ben-cobb/ben-cobb.github.io/pages/health
+```
+
+A daily check of the certificate and of these records runs from the
+[mmu-json-parser](https://github.com/ben-cobb/mmu-json-parser) repository
+(`.github/workflows/site-health.yml`) and e-mails when it fails.
+
+### 7.4 If the certificate breaks
+1. Fix DNS first, until the checks in 7.3 pass.
+2. **Settings → Pages**: remove the custom domain, save, add `www.ben-cobb.com` back,
+   save. Do it once and allow an hour; repeating it restarts the request.
+3. Keep that page open, or reload it. Loading it is what makes GitHub run its DNS
+   check and request the certificate.
+4. When the certificate is issued, tick **Enforce HTTPS** here and in each project
+   repository.
+
+The full steps are in the mmu-json-parser
+[README](https://github.com/ben-cobb/mmu-json-parser#when-the-certificate-breaks).
+
+### 7.5 History
+**24–29 September 2026:** the certificate expired because GitHub had not renewed it,
+and every HTTPS page showed a warning for 118 hours. Two URL Redirect Records at
+Namecheap had put a foreign address next to GitHub's. They were deleted, GitHub's
+address records were moved from `www` to `@`, and the domain was verified. Full record:
+[2026-09-certificate-outage.md](https://github.com/ben-cobb/mmu-json-parser/blob/main/docs/incidents/2026-09-certificate-outage.md).
